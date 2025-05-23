@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/988950682.svg)](https://doi.org/10.5281/zenodo.15496546)
 # Enhancing Participatory Mapping through AI: Detecting Hand-drawn Markings Using Siamese YOLOv9e
 This Repository contains the model code used to train our custom siamese YOLOv9e, based on a fork from the [Ultralytics](https://github.com/ultralytics/ultralytics) package.
 See [Ultralytics Fork for Mulitspectral & Change Detection](#ultrlytics-fork-for-mulispectral-&-change-detection) for general information how to setup a training using our custom YOLOv9e Changedetection.
