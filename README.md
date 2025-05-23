@@ -1,3 +1,27 @@
+# Enhancing Participatory Mapping through AI: Detecting Hand-drawn Markings Using Siamese YOLOv9e
+This Repository contains the model code used to train our custom siamese YOLOv9e, based on a fork from the [Ultralytics](https://github.com/ultralytics/ultralytics) package.
+See [Ultralytics Fork for Mulitspectral & Change Detection](#ultrlytics-fork-for-mulispectral-&-change-detection) for general information how to setup a training using our custom YOLOv9e Changedetection.
+
+## Abstract
+
+Participatory Mapping empowers communities to contribute localized spatial knowledge vital for urban planning, disaster preparedness, and environmental risk assessment. These valuable inputs are often captured in analogue formats—such as Sketch Maps—to bridge the digital gap and include local population. However, these analogue maps pose significant challenges for digital interpretation due to visual variability, scanning artefacts, and complex backgrounds. The Sketch Map Tool (SMT) addresses this through a multi-stage deep learning pipeline that extracts annotations from scanned maps. We enhance the SMT by replacing its object detection module with a Siamese YOLOv9e architecture. Our dual-input approach processes both clean and annotated versions of the same map, using feature-level fusion to isolate user-added content. 
+Trained on a large-scale dataset of synthetic and real-world Sketch Maps, our approach improves recall, precision, and mean average precision. Experiments across OpenStreetMap and satellite imagery basemaps demonstrate improved robustness and generalization. This focused upgrade makes the SMT pipeline more scalable for automated Participatory Mapping, while keeping it easy to understand and practical to use in real-world field settings. This ensures communities can meaningfully contribute to spatial planning through inclusive, data-driven insights.
+
+## Manuscript
+The Manuscript has been submitted to the ACM GoodIT 2025 Conference. We will provide a link to the manuscript later on.
+## Model Checkpoints
+
+The model checkpoints for the siamese yolov9e are availabe under the following links through the sketchmaptool.
+
+| Task                 | Model Name | Modification    |Purpose | URL Link                                                           |
+|----------------------|------------|-----------------|---------|--------------------------------------------------------------------|
+| Object Detection     | YOLO_OSM   | 6-Channel Input siamese YOLOv9 |Detects sketches on OSM | [download](https://sketch-map-tool.heigit.org/weights/SMT-OSM.pt)  |
+| Object Detection     | YOLO_ESRI  | 6-Channel Input siamese YOLOv9 | Detects sketches on ESRI maps | [download](https://sketch-map-tool.heigit.org/weights/SMT-ESRI.pt) |
+
+## Data
+We are currently evaluating our options to provide the Public with our Annotated Datasets used for model Training, under the consideration of ToU and Privacy Laws.
+Additionaly we aim to provide the code necessary to create Synthetic SketchMaps for Training.
+
 # Ultralytics Fork for Multispectral & Change-Detection
 
 This repository is a fork of the [Ultralytics](https://github.com/ultralytics/ultralytics) package, extended to support:
@@ -192,4 +216,19 @@ export FUSION_METHOD=attention
 ```
 
 
+# Apretiation
+We gratefully acknowledge the support of the Klaus Tschira Stiftung
+(KTS) and the German Foreign Office, whose funding made this
+research possible. We also thank the German Red Cross (GRC) for
+their collaboration and practical insights throughout the project.
+Special thanks go to Dr. Carolin Klonner for guiding first prototypes
+and inspiring this work. We thank our colleagues and student assis-
+tants at HeiGIT for their crucial contributions to dataset creation,
+annotation, and technical implementation, which were instrumen-
+tal to the success of this work. We thank Heidelberg University’s
+Computing Centre for Accesses to the SDS@hd hot-data storage.
+Support by the state of Baden-Württemberg through bwHPC (Helix
+Cluster) and the German Research Foundation (DFG) through grant
+INST 35/1597-1 FUGG is greatfully aknowledged.
+This Work is based on the work of the ultralytics team, which layed the foundation.
 
