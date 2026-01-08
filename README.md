@@ -9,15 +9,15 @@ Participatory Mapping empowers communities to contribute localized spatial knowl
 Trained on a large-scale dataset of synthetic and real-world Sketch Maps, our approach improves recall, precision, and mean average precision. Experiments across OpenStreetMap and satellite imagery basemaps demonstrate improved robustness and generalization. This focused upgrade makes the SMT pipeline more scalable for automated Participatory Mapping, while keeping it easy to understand and practical to use in real-world field settings. This ensures communities can meaningfully contribute to spatial planning through inclusive, data-driven insights.
 
 ## Manuscript
-The Manuscript has been submitted to the ACM GoodIT 2025 Conference. We will provide a link to the manuscript later on.
+The Manuscript has been submitted to the Association of Geographic Information Laboratories in Europe (AGILE) Conference 2026. We will provide a link to the manuscript later on.
 ## Model Checkpoints
 
 The model checkpoints for the siamese yolov9e are availabe under the following links through the sketchmaptool.
 
 | Task                 | Model Name | Modification    |Purpose | URL Link                                                           |
 |----------------------|------------|-----------------|---------|--------------------------------------------------------------------|
-| Object Detection     | YOLO_OSM   | 6-Channel Input siamese YOLOv9 |Detects sketches on OSM | [download](https://sketch-map-tool.heigit.org/weights/SMT-OSM.pt)  |
-| Object Detection     | YOLO_ESRI  | 6-Channel Input siamese YOLOv9 | Detects sketches on ESRI maps | [download](https://sketch-map-tool.heigit.org/weights/SMT-ESRI.pt) |
+| Object Detection     | YOLO_OSM   | 6-Channel Input siamese YOLOv9 |Detects sketches on OSM | [download](https://downloads.ohsome.org/sketch-map-tool/weights/SMT-OSM.pt)  |
+| Object Detection     | YOLO_ESRI  | 6-Channel Input siamese YOLOv9 | Detects sketches on ESRI maps | [download](https://downloads.ohsome.org/sketch-map-tool/weights/SMT-ESRI.pt) |
 
 ## Data
 We are currently evaluating our options to provide the Public with our Annotated Datasets used for model Training, under the consideration of ToU and Privacy Laws.
@@ -89,7 +89,7 @@ In this fork, we combine a Siamese backbone with YOLO’s detection head to focu
 
 1. **Install**  
    ```bash
-   pip install git+https://github.com/your-org/ultralytics-multispectral.git
+   pip install git+https://github.com/GIScience/ultralytics_siamese_smt.git
    ```
 ## configuration
 
@@ -107,7 +107,7 @@ model = YOLO('yolov8n.pt')
 # 2. Tell it to expect 6 input channels instead of 3
 #    and only adjust the first conv layer’s weights
 model.train(
-    data='data.yaml',
+    data='data.yaml',Association of Geographic Information Laboratories in Europe (AGILE)
     channels=6,           # input now has 6 bands (RGB@t1 + RGB@t2)
     adjust_layers=[0],    # remaps layer 0 weights from 3→6 channels
     bands = [0,1,2,3,4,5], # defines which bands should be loaded 
