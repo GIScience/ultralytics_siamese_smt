@@ -92,8 +92,9 @@ In this fork, we combine a Siamese backbone with YOLO’s detection head to focu
    pip install git+https://github.com/GIScience/ultralytics_siamese_smt.git
    ```
 ## configuration
-
-### mulitlayer 
+### Dataset 
+To train on a custom dataset, we require a [YOLO-Format Object Detection Dataset](https://docs.ultralytics.com/datasets/detect/). To train on addtional bands or timestamps, please provide the training images in the newly supported tiff format. 
+### Mulitlayer / Multispectral
 
 ### 3. Configuring the Model for 6-Channel Input
 
@@ -107,7 +108,7 @@ model = YOLO('yolov8n.pt')
 # 2. Tell it to expect 6 input channels instead of 3
 #    and only adjust the first conv layer’s weights
 model.train(
-    data='data.yaml',Association of Geographic Information Laboratories in Europe (AGILE)
+    data='data.yaml',
     channels=6,           # input now has 6 bands (RGB@t1 + RGB@t2)
     adjust_layers=[0],    # remaps layer 0 weights from 3→6 channels
     bands = [0,1,2,3,4,5], # defines which bands should be loaded 
@@ -150,7 +151,7 @@ model = YOLO('yolov9es.yaml', task='detect')
 model.train(
     data='data.yaml',
     channels=6,         # network expects 6-band inputs
-    bands=[0,1,2,3,4,5], # indexes of the band that should be loaded, first 
+    bands=[0,1,2,3,4,5], # indexes of the band that should be loaded, first. First half belongs to the first timestamp, second half to the second timestamp
     dual_stream=True,   # turn on Siamese twin-stream processing
     # … other hyperparams go below
 )
