@@ -217,8 +217,13 @@ Before creating your fusion block, export the choice in your shell:
 export FUSION_METHOD=attention
 ```
 
+# Run Training on the Custom SMT Datasets and evaluation
 
-# Apretiation
+The folder SMT-Scripts contains scripts to run the training on the custom SMT datasets. Please refer to the [SMT-Scripts/SMT.md](SMT-Scripts/SMT.md) for detailed instructions.
+Besides the code to launch a training on a HPC cluster, the folder also contains a notebook to analyse the trained models and visualize results both quantitatively and qualitatively, and the plots included in the manuscript.
+As of now the Dataset is not published as we are currently evaluating our options to provide the Public with our Annotated Datasets used for model Training, under the consideration of ToU and Privacy Laws.
+
+# Apretiatio
 We gratefully acknowledge the support of the Klaus Tschira Stiftung
 (KTS) and the German Foreign Office, whose funding made this
 research possible. We also thank the German Red Cross (GRC) for
