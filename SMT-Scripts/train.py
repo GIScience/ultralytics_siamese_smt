@@ -37,7 +37,7 @@ def parse_bands(bands_str):
 
 #model params
 model_path = os.environ.get('MODEL_PATH', 'yolov9es.yaml')
-dataset_path= os.environ.get('DATASET_PATH', '/mnt/sds-hd/sd17f001/sketch-map-tool/Datasets/synthetical/data.yaml')
+dataset_path= os.environ.get('DATASET_PATH', 'your/ds/path')
 epochs = int(os.environ.get('EPOCHS', 100))
 batch_size = int(os.environ.get('BATCH_SIZE',8))
 imgsz = int(os.environ.get('IMGSZ', 1024))

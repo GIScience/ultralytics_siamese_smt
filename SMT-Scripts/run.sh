@@ -31,7 +31,7 @@ export DUAL_STREAM=True
 export BANDS=[0,1,2,3,4,5]
 export FUSION_METHOD="diff"
 export STORE="local"
-export STORE_PATH="path_to_ds" #adjust path to ur destination
+export STORE_PATH="path/to/ds" #adjust path to ur destination
 
 module load devel/miniconda/3
 #module load lib/cudnn/8.5.0-cuda-11.6
